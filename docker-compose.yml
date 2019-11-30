@@ -1,0 +1,19 @@
+version: '2'
+services:
+    dw-reverseproxy:
+        image: pjheslin/dw-reverseproxy
+        ports:
+            - '80:80'
+        restart: always
+
+    diogenesweb:
+        depends_on:
+            - dw-reverseproxy
+        image: pjheslin/diogenesweb
+        restart: always
+
+    diogenesmorph:
+        depends_on:
+            - dw-reverseproxy
+        image: pjheslin/diogenesmorph
+        restart: always
