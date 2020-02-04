@@ -5,12 +5,16 @@ services:
         ports:
             - '80:80'
         restart: always
+        volumes:
+          - ./app/static:/static
 
     diogenesweb:
         depends_on:
             - dw-reverseproxy
         image: pjheslin/diogenesweb
         restart: always
+        env_file:
+            - app/.env
 
     diogenesmorph:
         depends_on:
