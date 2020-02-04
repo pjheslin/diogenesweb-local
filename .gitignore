@@ -1,5 +1,6 @@
 /app
 /data
 /attic
-/notes.txt
-/architecture.org
+/notes
+/logs
+ebextensions-env.config
